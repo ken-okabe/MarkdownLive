@@ -32,7 +32,6 @@ $          [~/Library/Application Support/Sublime Text 3/Packages/MarkdownLive]
 
 ```
 npm install
-
 ```
 - Launch or Restart SublimeText3 or
 `MarkdownLive: Reload Server` from SublimeText Command
