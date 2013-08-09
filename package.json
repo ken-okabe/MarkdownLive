@@ -1,0 +1,24 @@
+{
+	"name": "MarkdownLive",
+	"version": "0.0.1",
+	"description": "Streaming Markdown Live View for SublimeText3",
+	"main": "app.js",
+	"engines":
+	{
+		"node": ">= 0.10.0"
+	},
+	"scripts":
+	{
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies":
+	{
+		"highlight.js": "*",
+		"js-beautify": "*",
+		"marked": "*",
+		"shoe": "*",
+		"through": "*"
+	},
+	"author": "KenOKABE",
+	"license": "MIT"
+}
