@@ -1,6 +1,5 @@
 #MarkdownLive
 ###Markdown Streaming Live View for SublimeText3
 ---
-DEMO
-
+####Getting Started
 http://kenokabe.github.io/MarkdownLive/
