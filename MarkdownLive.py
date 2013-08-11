@@ -66,7 +66,7 @@ class MyEventListener2(sublime_plugin.EventListener):
 		if md(view):
 			tcp(view)
 
-class MyEventListenerssd3(sublime_plugin.EventListener):
+class MyEventListener3(sublime_plugin.EventListener):
 	def on_clone_async(self,view):
 		if md(view):
 			tcp(view)

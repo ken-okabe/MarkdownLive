@@ -12,12 +12,12 @@
         "gfm": true,
         "breaks": true,
         "tables": true,
-        "pedantic": false,
+        "pedantic": true,
         "sanitize": false,
-        "smartLists": true,
+        "smartLists": false,
         "smartypants": true,
         "langPrefix": "lang-"
     },
 
-    "newlinesAsIs": true
+    "newlinesAsIs": false
 }

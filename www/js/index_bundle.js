@@ -4147,7 +4147,7 @@ function through (write, end, opts) {
 			.ready(function()
 			{ //--------------------------
 				$('#streamDIV')
-					.html('<h2>MarkdownLive Ready. <h3>Open <br>.md<br>.markdown<br>.mdown<br>.mkdn<br>.mkd<br>.mdwn<br>.mdtxt<br>.mdtext<br>.text<br>.txt</h3>');
+					.html('<h1>MarkdownLive</h1><h3>Markdown Streaming Live View for SublimeText3</h3><br><h4><strong>Open</strong> <br><br>.md<br>.markdown<br>.mdown<br>.mkdn<br>.mkd<br>.mdwn<br>.mdtxt<br>.mdtext<br>.text<br>.txt</h4>');
 				var through = require('through');
 
 				var stream = require('shoe')('/stream')

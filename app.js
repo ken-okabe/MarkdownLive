@@ -130,10 +130,16 @@
 				.join(dest);
 		};
 
-		var hack = function(data)
+		var hack = function(data0)
 		{
-			var rxCodeG = /<code>[\s\S]+?<\/code>|<pre>[\s\S]+?<\/pre>|```+[\s\S]+?```+|\n- [\s\S]+?\n/g;
-			var rxCode = /<code>[\s\S]+?<\/code>|<pre>[\s\S]+?<\/pre>|```+[\s\S]+?```+|\n- [\s\S]+?\n/;
+			//list hack 
+			var data7 = data0.replace(/(- [\s\S]+?)(?:\n\n)/g, '$1\n&nbsp;\n');
+			var data8 = data7.replace(/(- [\s\S]+?)(?:\n&nbsp;\n\n)/g, '$1\n\n\n\n\n');
+			var data9 = data8.replace(/\n&nbsp;\n(?=[^-])/g, '\n\n\n'); //ok
+			var data = data9; //.replace(/\n\n(?=- )/g, '\n\n');
+
+			var rxCodeG = /<code>[\s\S]+?<\/code>|<pre>[\s\S]+?<\/pre>|\n```+[\s\S]+?```+|\n- [\s\S]+?\n\n/g;
+			var rxCode = /<code>[\s\S]+?<\/code>|<pre>[\s\S]+?<\/pre>|\n```+[\s\S]+?```+|\n- [\s\S]+?\n\n/;
 
 			var codes = data.match(rxCodeG);
 			var codeKey = 'thisistheCodeKey';
@@ -330,7 +336,6 @@
 						{
 							console.log('TCPsocket connected');
 							//socket.pipe(process.stdout);
-
 							socket.pipe(require('through')
 								(function(data)
 								{ //----------------------------
@@ -341,7 +346,7 @@
 									console.log('newlinesAsIs: ' + newlinesAsIs);
 									if (newlinesAsIs)
 									{
-										data2 = '<style type="text/css">p {margin: 0}</style>' +
+										data2 = '<style type="text/css">p {margin: 0em}</style>' +
 											marked(hack(data1));
 									}
 									else
@@ -361,6 +366,6 @@
 						});
 				})
 				.install(HTTPserver, '/stream');
-		}
+		};
 		//---------------
 	}());
