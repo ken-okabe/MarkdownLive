@@ -86,7 +86,7 @@
 			});
 		};
 
-		//local testing.../
+		//local testing.../----------
 		var path = require("path");
 		var HTTPserver =
 			httpServer(path
