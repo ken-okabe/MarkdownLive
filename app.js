@@ -67,8 +67,6 @@
 
 		};
 
-		var sSlash = (process.platform.match(/^win/)) ? '\\' : '/';
-
 		readSettingsDefault();
 		fs.exists(filenameUser, function(exists)
 		{

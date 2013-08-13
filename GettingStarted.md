@@ -43,3 +43,12 @@ Firefox is recommended since Safari&Chrome(Webkit engine) has some rattling when
 - Open a markdown file to edit
 
 
+>If the node server is faled to launch, you might need to specify the direct path to the node binary; 
+Open 
+**.../Packages/MarkdownLive/nodePath.cfg**
+>If the node path is
+YourHomeDir/.nvm/v0.10.15/bin/node
+Specify:
+```.nvm/v0.10.15/bin/node```
+
+
