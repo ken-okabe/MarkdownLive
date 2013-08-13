@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sublime, sublime_plugin, socket, re,subprocess,os
+import sublime, sublime_plugin, socket, re,subprocess,os,sys
 
 print("MarkdownLive: Initiated..")
 
@@ -21,16 +21,32 @@ def tcp(view):
 	s.close()
 
 def nodeApp():
-	path1 = os.path.join('MarkdownLive','app.js')
-	path2 = os.path.join(sublime.packages_path(),path1)
-	print("MarkdownLive: "+path2)
-	cmd = ['node', path2]
-	p = subprocess.Popen(cmd,
-                         stdin=subprocess.PIPE,
-                         stdout=subprocess.PIPE,
-                         stderr=subprocess.PIPE,
-                         shell=False)
+	appFile = os.path.join('MarkdownLive','app.js')
+	appPath = os.path.join(sublime.packages_path(),appFile)
 
+	try:
+		print("MarkdownLive: node "+appPath)
+		p = subprocess.Popen(['node', appPath],
+	            shell=False,
+	                            stdout=subprocess.PIPE,
+	                            stderr=subprocess.PIPE,
+	                            )
+	except:
+		from os.path import expanduser
+		home = expanduser("~")
+		path1 = os.path.join('MarkdownLive','nodePath.cfg')
+		path2 = os.path.join(sublime.packages_path(),path1)
+		context = open(path2, "rt")
+		nodePath = os.path.join(home,context.read())
+		context.close()
+
+		print("MarkdownLive: "+nodePath+" "+appPath)
+		p = subprocess.Popen([nodePath, appPath],
+	            shell=False,
+	                            stdout=subprocess.PIPE,
+	                            stderr=subprocess.PIPE,
+	                            )
+        
 def reloadServer():
 	TCP_IP = '127.0.0.1'
 	TCP_PORT = 9998 
@@ -41,7 +57,7 @@ def reloadServer():
 		s.connect((TCP_IP, TCP_PORT))
 		s.send(MESSAGE.encode()) 
 		s.close()
-		print("MarkdownLive: "+'and Launching: node')
+		print("MarkdownLive: "+'found the server listening and quit; Launching: node')
 		nodeApp()
 	except:
 		print("MarkdownLive: "+'error no Server and Launching: node')
