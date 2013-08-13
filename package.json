@@ -1,6 +1,6 @@
 {
 	"name": "MarkdownLive",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "Streaming Markdown Live View for SublimeText3",
 	"main": "app.js",
 	"engines":
