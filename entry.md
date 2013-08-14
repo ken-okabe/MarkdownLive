@@ -3,6 +3,15 @@
 ---
 ![](https://lh5.googleusercontent.com/-ZqBkq4KHjKs/UgbOLxXUjpI/AAAAAAAAEfA/KhP7SOaTsOg/w914-h514-no/markdownSS.png)
 
+
+- **Streaming View** while you are typing text without saving the document
+- **Fast and Smooth** - **Independent processes** for **Input**(*SublimeText*), **Conversion from Markdown to HTML**(*node.js*) and **Output**(*WebBrowser*)
+- GitHub Flavored Markdown (**GFM**) is available Out-of-the-Box
+- Original **newLinesAsIs** mode
+- Code Highlights (**Highlight.js**)  is available Out-of-the-Box
+- **Fully Customizable Output** - edit/add HTML or CSS
+- Works on **Sublime Text**: The text editor you'll fall in love with
+
 ##Requirements
 
 - MacOSX / Linux / Windows
