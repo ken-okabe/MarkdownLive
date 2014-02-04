@@ -248,7 +248,7 @@
 					res.end();
 					return;
 				}
-
+				var fileStream
 
 				if (stats.isFile())
 				{
@@ -260,7 +260,7 @@
 						'Content-Type': mimeType
 					});
 
-					var fileStream =
+					fileStream =
 						fs.createReadStream(filename)
 						.pipe(res);
 				}
@@ -271,7 +271,7 @@
 					{
 						'Content-Type': "text/html"
 					});
-					var fileStream =
+					fileStream =
 						fs.createReadStream(indexFilename)
 						.pipe(res);
 				}
@@ -293,15 +293,15 @@
 		var HTTPserver =
 			httpServer(path
 				.join(__dirname, 'www'))
-			.listen(9999, function()
+			.listen(8888, function()
 			{
-				console.log('HTTP listening 9999');
+				console.log('HTTP listening 8888');
 			});
 		var TCPserver = require('net')
 			.createServer()
-			.listen(9998, function()
+			.listen(8889, function()
 			{
-				console.log('TCP listening 9998');
+				console.log('TCP listening 8889');
 			})
 			.on('connection', function(socket)
 			{

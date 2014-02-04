@@ -12,7 +12,7 @@ def md(view):
 
 def tcp(view):
 	TCP_IP = '127.0.0.1'
-	TCP_PORT = 9998 
+	TCP_PORT = 8889
 	MESSAGE = view.substr(sublime.Region(0, view.size()))
 
 	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
