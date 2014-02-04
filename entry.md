@@ -46,7 +46,7 @@ npm install
 - Launch or Restart SublimeText3 or
 `MarkdownLive: Reload Server` from SublimeText Command
 
--  Open a WebBrowser=> localhost:9999
+-  Open a WebBrowser=> localhost:8888
 Firefox is recommended since Safari&Chrome(Webkit engine) has some rattling when HTML is rendered.
 
 - Open a markdown file to edit
@@ -59,5 +59,24 @@ Open
 YourHomeDir/.nvm/v0.10.15/bin/node
 Specify:
 ```.nvm/v0.10.15/bin/node```
+
+
+If you have a trouble to see the Welcome page via Open a WebBrowser=> localhost:8888
+
+Quit all `node` process
+
+```
+cd MarkdownLive
+$          [~/Library/Application Support/Sublime Text 3/Packages/MarkdownLive]
+```
+
+```
+node app
+```
+
+and see the result.
+
+
+
 
 
