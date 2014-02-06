@@ -130,8 +130,8 @@
 
 		var hack = function(data0)
 		{
-			//list hack 
-			var data7 = data0.replace(/(- [\s\S]+?)(?:\n\n)/g, '$1\n&nbsp;\n');
+			var data6 = data0.replace(/`\b(.*?)\b`(?!`)/g, '**$1**');
+			var data7 = data6.replace(/(- [\s\S]+?)(?:\n\n)/g, '$1\n&nbsp;\n');
 			var data8 = data7.replace(/(- [\s\S]+?)(?:\n&nbsp;\n\n)/g, '$1\n\n\n\n\n');
 			var data9 = data8.replace(/\n&nbsp;\n(?=[^-])/g, '\n\n\n'); //ok
 			var data = data9; //.replace(/\n\n(?=- )/g, '\n\n');
@@ -206,7 +206,6 @@
 
 			return data3L;
 		};
-
 		//----------------------------
 		var httpServer = function(dir)
 		{
